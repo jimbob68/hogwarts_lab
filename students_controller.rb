@@ -5,38 +5,33 @@ require_relative('models/house')
 also_reload('./models/*')
 
 # index
-get '/students' do
+get '/students' do # show all
   @students = Student.all()
   erb(:index)
 end
 
-get '/students/new' do
+get '/students/new' do # create
   erb(:new)
 end
 
-post '/students' do
+post '/students' do # create(save)
   @student = Student.new( params )
   @student.save()
   erb(:enroll)
 end
 
-# edit
-get '/students/:id/edit' do
+
+get '/students/:id/edit' do # edit
   @student = Student.find( params[:id])
   erb(:edit)
 end
 
-# show
-get '/students/:id' do
+post '/students/:id' do
+  Student.new( params ).update
+  redirect to '/students'
+end
+
+get '/students/:id' do # show
   @student = Student.find(params[:id])
   erb(:show)
 end
-# new
-
-# create
-
-
-
-# update
-
-# destroy
