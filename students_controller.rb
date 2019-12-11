@@ -20,16 +20,22 @@ post '/students' do
   erb(:enroll)
 end
 
+# edit
+get '/students/:id/edit' do
+  @student = Student.find( params[:id])
+  erb(:edit)
+end
+
 # show
 get '/students/:id' do
   @student = Student.find(params[:id])
-  erb(:student_profile)
+  erb(:show)
 end
 # new
 
 # create
 
-# edit
+
 
 # update
 
