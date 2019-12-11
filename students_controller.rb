@@ -11,6 +11,7 @@ get '/students' do # show all
 end
 
 get '/students/new' do # create
+  @houses = House.all()
   erb(:new)
 end
 
@@ -20,9 +21,9 @@ post '/students' do # create(save)
   erb(:enroll)
 end
 
-
 get '/students/:id/edit' do # edit
   @student = Student.find( params[:id])
+  @houses = House.all()
   erb(:edit)
 end
 
@@ -34,4 +35,10 @@ end
 get '/students/:id' do # show
   @student = Student.find(params[:id])
   erb(:show)
+end
+
+post '/students/:id/delete' do
+  student = Student.find( params[:id])
+  student.delete()
+  redirect to '/students'
 end

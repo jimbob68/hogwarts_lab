@@ -5,3 +5,7 @@
 <p>Age: <%= @student.age %></p>
 
 <a href="/students/<%= @student.id %>/edit">Edit Student</a>
+
+<form  method="POST" action="/students/<%= @student.id %>/delete">
+  <input type="submit" value="Expel student">
+</form>

@@ -1,4 +1,4 @@
-<form method="POST" action="/students/<%= @student.id %>">
+<form method="POST" action="/students <%= @student.id %>">
 
 <label for="first-name">First Name:</label>
 <input type="text" name="first_name" id="first-name" value="<%= @student.first_name %>">
@@ -6,16 +6,19 @@
 <label for="last-name">Last Name:</label>
 <input type="text" name="last_name" id="last-name" value=" <%= @student.last_name %>">
 
+
 <label for="house_select">Select House:</label>
 <select name="house_id" id="house_select">
-  <option value="1" <%= "selected" if @student.house_id == "1" %>>>Gryffindor</option>
- <option value="2" <%= "selected" if @student.house_id == "2" %>>>Hufflepuff</option>
-  <option value="3" <%= "selected" if @student.house_id == "3" %>>>Ravenclaw</option>
-  <option value="4" <%= "selected" if @student.house_id == "4" %>>>Slytherin</option>
-</select>
+  <% @houses.each do | house | %>
+    <option value="<%= house.id %>" <%= "selected" if @student.house_id == house.id %>>
+      <%= house.name%>
+    </option>
+  <% end %>
+  </select>
+
 
 <label for="age">Age:</label>
-<input type="number" min="11" name="age" id="age" value="<%= @student.age %>">
+<input type="number" min="11" name="age" id="age" value=" <%= @student.age %>">
 
 <input type="submit" value="Edit Student">
 
