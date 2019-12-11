@@ -1,0 +1,5 @@
+<% @students.each do | student | %>
+<p>Student Name: <%= student.format_name() %></p>
+<p><a href="/students/<%= student.id %>">Click for student profile</a></p>
+<hr>
+<% end %>
