@@ -1,5 +1,14 @@
 <form method="POST" action="/students">
 
+<label for="first-name">First Name:</label>
+<input type="text" name="first_name" id="first-name">
+
+<label for="last-name">Last Name:</label>
+<input type="text" name="last_name" id="last-name">
+
+<label for="age">Age:</label>
+<input type="number" min="11" name="age" id="age">
+
 <label for="house_select">Select House:</label>
 <select name="house_id" id="house_select">
   <option value="1">Gryffindor</option>
@@ -7,4 +16,7 @@
   <option value="3">Ravenclaw</option>
   <option value="4">Slytherin</option>
 </select>
+
+<input type="submit" value="Enroll Student">
+
 </form>
