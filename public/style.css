@@ -1,8 +1,8 @@
 body {
-  padding: 30px;
+  padding: 50px;
   font-family: 'Rye', cursive;
-  color: #ccad00;
-  background-image: url("/harry_potter.gif");
+  color: #ff9922;
+  background-image: url("/harry_potter01.png");
 }
 
 a {
@@ -22,7 +22,7 @@ a:hover {
 
 .menu-item {
   display: inline-block;
-  flex-grow: 1;
+  flex-grow: 3;
 }
 
 #logo {
@@ -33,15 +33,15 @@ a:hover {
   margin-left: 300px;
 }
 .student {
-  border: 5px double;
-  margin: 0 35px 30px 0;
-  padding: 25px;
+  border: 8px double;
+  margin: 0 35px 35px 0;
+  padding: 35px;
   width: 200px;
   display: inline-block;
 }
 
 .form-el {
-  margin: 10px 0;
+  margin: 20px 0;
 }
 
 .form-wrapper .form-el input[type="submit" i] {
